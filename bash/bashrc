@@ -1,0 +1,26 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+source ~/.git-prompt.sh
+source ~/.bash-powerline.sh
+
+PS1='[\u \W]$(__git_ps1)\$ '
+#PS1="\[$GREEN\]\t\[$RED\]-\[$BLUE\]\u\[$YELLOW\]\[$YELLOW\]\W\[\033[m\]\[$MAGENTA\]\$(__git_ps1)\[$WHITE\]\$ "
+
+if [ -f ~/.dotfiles/bash/bash_alias ]; then
+    . ~/.dotfiles/bash/bash_alias
+fi
+
+if [ -f ~/.dotfiles/bash/bash_exports ]; then
+    . ~/.dotfiles/bash/bash_exports
+fi
+
+
+# >>> BEGIN ADDED BY CNCHI INSTALLER
+BROWSER=/usr/bin/chromium
+EDITOR=/usr/bin/nano
+# <<< END ADDED BY CNCHI INSTALLER
